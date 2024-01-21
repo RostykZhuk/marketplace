@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
 import About from './pages/About';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
@@ -15,15 +16,14 @@ const routes = [
 
 function App() {
 	return (
-		<div className='text-3xl font-bold underline text-yellow-500'>
-			<BrowserRouter>
-				<Routes>
-					{routes.map(route => (
-						<Route key={route.path} path={route.path} element={route.element} />
-					))}
-				</Routes>
-			</BrowserRouter>
-		</div>
+		<BrowserRouter>
+			<Header />
+			<Routes>
+				{routes.map(route => (
+					<Route key={route.path} path={route.path} element={route.element} />
+				))}
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
